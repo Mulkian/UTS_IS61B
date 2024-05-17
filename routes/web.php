@@ -21,4 +21,6 @@ Route::get('dashboard', function () {
 
 Route::controller(CostumerController::class)->prefix('costumer')->group(function(){
     Route::get('','index')->name('costumer');
+    Route::get('insert','add')->name('costumer.insert');
+    Route::post('insert','insert')->name('costumer.add.insert');
 });

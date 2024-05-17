@@ -5,10 +5,21 @@
 @section('content')
     <h1 class="h3 mb-2 text-gray-800">Daftar Penyewa</h1>
 
+    @if (session('message'))
+
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{session('message')}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+    @endif
+
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <a href="" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i>Tambah</a>
+            <a href="{{route('costumer.insert')}}" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i>Tambah</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -19,6 +30,7 @@
                             <th>Nama</th>
                             <th>Alamat</th>
                             <th>Tanggal</th>
+                            <th>Nomor Hp</th>
                             <th>Merk Mobil</th>
                             <th>Plat Nomor</th>
                             <th>Biaya</th>
@@ -33,6 +45,7 @@
                             <td>{{ $row->nama }}</td>
                             <td>{{ $row->alamat }}</td>
                             <td>{{ $row->tanggal }}</td>
+                            <td>{{ $row->no_hp }}</td>
                             <td>{{ $row->merk_mobil }}</td>
                             <td>{{ $row->plat_nomor }}</td>
                             <td>{{ $row->biaya }}</td>
