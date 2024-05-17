@@ -43,4 +43,27 @@ class CostumerController extends Controller
 
         return redirect()->route('costumer')->with('message','Data Berhasil Masuk!');
     }
+
+    public function edit(string $id)
+    {
+        $jur = Jurusan::find($id);
+        return view('costumer.edit',compact('jur'));
+
+    }
+
+    public function update(Request $request, string $id)
+    {
+        $customer = customer::find($id);
+        $jur->kode = $request->kode;
+        $jur->customer = $request->nama;
+        $jur->save();
+
+        return redirect('costumer');
+    }
+
+    public function destroy($id)
+    {
+        $costumer = Costumer::find($id);
+
+    }
 }
