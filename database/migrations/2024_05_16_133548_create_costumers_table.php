@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('alamat');
-            $table->string('tanggal');
+            $table->date('tanggal');
             $table->string('no_hp');
             $table->string('merk_mobil');
             $table->string('plat_nomor');

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\controllers\costumerController;
+use App\Http\controllers\CostumerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +19,6 @@ Route::get('dashboard', function () {
 })->name('dashboard');
 
 
-Route::controller(costumerController::class)->prefix('costumer')->group(function(){
+Route::controller(CostumerController::class)->prefix('costumer')->group(function(){
     Route::get('','index')->name('costumer');
 });

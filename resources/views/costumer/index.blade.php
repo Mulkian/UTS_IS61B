@@ -1,40 +1,47 @@
 @extends('layout.app')
 
-@section('title', 'Customer')
+@section('title', 'Costumer')
 
 @section('content')
-    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-        For more information about DataTables, please visit the <a target="_blank"
-            href="https://datatables.net">official DataTables documentation</a>.</p>
+    <h1 class="h3 mb-2 text-gray-800">Daftar Penyewa</h1>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+            <a href="" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i>Tambah</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                        <tr class="text-center">
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Alamat</th>
+                            <th>Tanggal</th>
+                            <th>Merk Mobil</th>
+                            <th>Plat Nomor</th>
+                            <th>Biaya</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
+                        <?php $no = 1; ?>
+                        @foreach ($costumer as $row)
+                        <tr class="text-center">
+                            <td>{{ $no++ }}</td>
+                            <td>{{ $row->nama }}</td>
+                            <td>{{ $row->alamat }}</td>
+                            <td>{{ $row->tanggal }}</td>
+                            <td>{{ $row->merk_mobil }}</td>
+                            <td>{{ $row->plat_nomor }}</td>
+                            <td>{{ $row->biaya }}</td>
+                            <td>
+                                <a href="" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                                <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                            </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
