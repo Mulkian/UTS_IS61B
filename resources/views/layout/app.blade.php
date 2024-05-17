@@ -49,14 +49,15 @@
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
+            <hr class="sidebar-divider">
+
              <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="{{route('costumer')}}">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Customer</span></a>
             </li>
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
 
 
             <!-- Sidebar Toggler (Sidebar) -->
@@ -95,14 +96,7 @@
 
 
 
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
-                            </a>
+
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
@@ -133,10 +127,15 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    @yield('content');
+                    @yield('content')
 
 
 
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
@@ -148,7 +147,11 @@
             </footer>
             <!-- End of Footer -->
 
+        </div>
+        <!-- End of Content Wrapper -->
 
+    </div>
+    <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
